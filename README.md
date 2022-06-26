@@ -35,10 +35,10 @@ Nourah AlMutlaq
 
 
 ## **Course TOC**
-|Day|Subject|Resources|Lab|Assignment|
-| :- | :- | :- | :- | :- |
-|Day 1|<p>- CLI, Git , Github </p><p>- Introduction to Python</p><p>- Installing Python & the IDE</p>|- [Python Lesson 1.1](https://github.com/Tuwaiq-Python/main/tree/main/Python/Day1)|- [**first_repo**](https://github.com/Tuwaiq-Python/first_repo)|- [**LAB_GIT**](https://github.com/Tuwaiq-Python/LAB_GIT)|
-|Day 1|<p>- CLI, Git , Github </p><p>- Introduction to Python</p><p>- Installing Python & the IDE</p>|- [Python Lesson 1.1](https://github.com/Tuwaiq-Python/main/tree/main/Python/Day1)|- [**first_repo**](https://github.com/Tuwaiq-Python/first_repo)|- [**LAB_GIT**](https://github.com/Tuwaiq-Python/LAB_GIT)|
+|Day|Subjects|Labs|
+| :- | :- | :- |
+|Day 1| [Python Review](https://github.com/NAlMutlaq/FastApi_26_June/blob/main/Day%231/Day1.md)| <p>- [Variables](https://github.com/NAlMutlaq/FastApi_26_June/blob/main/Day%231/Variables.md)</p><p>- [Variables](https://github.com/NAlMutlaq/FastApi_26_June/blob/main/Day%231/Variables.md)</p><p>- [Variables](https://github.com/NAlMutlaq/FastApi_26_June/blob/main/Day%231/Variables.md)|
+
 
 
 
