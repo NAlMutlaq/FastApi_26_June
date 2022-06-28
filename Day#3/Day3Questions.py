@@ -17,7 +17,7 @@ def _():
         <body>
             <h1> Im In Main Page !!</h1>
             <h2> Question 1  (@app.get('/date') <a href='/date'> Go to Question 1 </a> </h2> 
-            <h2> Question 1  @app.get('/date')  <a href='/random_using_get?x=10&y=20'> Go to Question 2 </a> </h2>
+            <h2> Question 1  @app.get('/random_using_get')  <a href='/random_using_get?x=10&y=20'> Go to Question 2 </a> </h2>
         </body>
     </html>
     """
