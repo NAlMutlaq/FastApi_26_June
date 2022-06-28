@@ -16,8 +16,8 @@ def _():
         </head>
         <body>
             <h1> Im In Main Page !!</h1>
-            <h2> Question 1  <a href='/date'> Go to Question 1 </a> </h2> 
-            <h2> Question 1  <a href='/random_using_get?x=10&y=20'> Go to Question 2 </a> </h2>
+            <h2> Question 1  (@app.get('/date') <a href='/date'> Go to Question 1 </a> </h2> 
+            <h2> Question 1  @app.get('/date')  <a href='/random_using_get?x=10&y=20'> Go to Question 2 </a> </h2>
         </body>
     </html>
     """
@@ -31,7 +31,7 @@ def _():
     html_content = f"""
     <html>
         <head>
-            <title> Main Page </title>
+            <title> date Page </title>
         </head>
         <body>
             <h1> Im In Question 1  Page !!</h1>
@@ -54,7 +54,7 @@ def _(x :int , y:int):
         </head>
         <body>
             <h1> Im In Question 2  Page !!</h1>
-            <h2> Enter Numbers is {x}  , {y} : <br> random numbers =  {random.randint(x,y)}</h2>
+            <h2> the Enter Numbers is {x}  , {y} : <br> random numbers =  {random.randint(x,y)}</h2>
         </body>
     </html>
     """
@@ -65,6 +65,8 @@ def _(x :int , y:int):
 # رقم عشوائي
 @app.post('/random')
 def _(x :int , y:int):
+    if x  > y :
+        x , y = y , x
     import random
     return random.randint(x,y)
 
