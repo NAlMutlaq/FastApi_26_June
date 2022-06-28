@@ -98,6 +98,11 @@
 - حيث يشير app إلى اسم FastAPI instance.
 - أما main فهو يشير لملف `main.py`.
 - أما `--reload` تساعد server بإعادة التشغيل عند القيام بتغييرات داخل الأكواد.
+ويمكن أيضا عن طريق كتابة:
+```python
+if __name__ == "__main__":
+    uvicorn.run("main:app", reload=True)
+ ```
 
 أخيرا سوف تجد برنامجك على الرابط http://127.0.0.1:8000 مع JSON response
 لإيقاف البرنامج يمكنك ذلك عن طريق CTRL+C .
