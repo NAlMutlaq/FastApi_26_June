@@ -223,3 +223,64 @@ if __name__ == "__main__":
 - قم بالدخول على http://127.0.0.1:8000/items/foo?short=true
 - قم بالدخول على http://127.0.0.1:8000/items/foo?short=on
 - قم بالدخول على http://127.0.0.1:8000/items/foo?short=yes
+
+
+
+
+تعريف Required query parameters
+
+لتعريف query parameters من نوع Required يمكننا فقط عدم تعريف قيم افتراضية.
+
+    @app.get("/items/{item_id}")
+    def read_user_item(item_id: str, needy: str):
+        item = {"item_id": item_id, "needy": needy}
+        return item
+- قم بالدخول على http://127.0.0.1:8000/items/foo-item
+- قم بالدخول على http://127.0.0.1:8000/items/foo-item?needy=sooooneedy
+
+
+
+مفهوم Request Body
+
+يمثل request body البيانات التي يرسلها client (المتصفح) إلى API .
+يمثل response body البيانات التي يرسلها API إلى client (المتصفح).
+يجب أن ترسل API دائمًا response body لكن clients ليس بالضرورة أن يرسل request body دائما.
+لتعريف request body نستخدم Pydantic models وهي التي تقوم بتعريف شكل البيانات عن طريق لغة python وتوفر data validation عن طريق python type annotations وتفرض type hints وقت التشغيل (runtime)
+
+
+خطوات إنشاء Pydantic models
+- استيراد `BaseModel`.
+- إنشاء data model.
+- تعريف `BaseModel` على شكل parameter أو مايسمى (request body).
+
+
+    from typing import Optional
+    from fastapi import FastAPI
+    from pydantic import BaseModel
+    
+    class Item(BaseModel):
+        id: int
+        name: str
+        description: Optional[str] = None
+        price: float
+        tax: Optional[float] = None
+    
+    app = FastAPI()
+    
+    @app.post("/items/")
+    def create_item(item: Item):
+        return item
+
+لاحظ في المثال يمثل الرمز asterisk sign (*) الحقول المطلوبة (required fields).
+
+![](https://paper-attachments.dropbox.com/s_DB0F2E35FD8CC02D881033F9C84F6548FEC16E37F57F487E9A274035F265B69D_1645269776193_Screen+Shot+1443-07-18+at+2.22.20+PM.png)
+
+
+إذا كنت تريد إرجاع قيم model على سبيل المثال (e.g: item name) يمكنك كتابة:
+
+    @app.post("/items/")
+    def create_item(item: Item):
+        return item.name
+
+
+
