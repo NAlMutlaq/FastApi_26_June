@@ -46,13 +46,18 @@
 
 
 - تثبيت fastapi.
+    ```
     pip3 install fastapi
+    ```
 - تثبيت uvicorn.
+    ```
     pip3 install uvicorn
     uvicorn --version
+    ```
 
 
 - إنشاء ملف `main.py`
+    ```
     from fastapi import FastAPI  
     
     app = FastAPI() # create instance from fastapi
@@ -61,6 +66,8 @@
     @app.get("/") # localhoat path
     def root():
         return {"message": "Hello World"}
+    ```
+    
 
 في المثال السابق قمنا بالتالي:
 
@@ -123,10 +130,14 @@ if __name__ == "__main__":
                 "Student2": {"Name":"Amal", "ID":"324567"}}
 
 
+ويمكن إرجاع أشكال مختلفة من البيانات String أو Dictionary  أو Numbers وغيره.
+
 لاختبار API، يمكنك ذلك عن طريق:
 
-الطريقة الأولى : http://127.0.0.1:8000/docs
-الطريقة الثانية: http://127.0.0.1:8000/redoc
+- الطريقة الأولى :
+http://127.0.0.1:8000/docs
+- الطريقة الثانية:
+http://127.0.0.1:8000/redoc
 
 
 
@@ -254,6 +265,7 @@ if __name__ == "__main__":
 - تعريف `BaseModel` على شكل parameter أو مايسمى (request body).
 
 
+    ```
     from typing import Optional
     from fastapi import FastAPI
     from pydantic import BaseModel
@@ -270,6 +282,7 @@ if __name__ == "__main__":
     @app.post("/items/")
     def create_item(item: Item):
         return item
+    ```
 
 لاحظ في المثال يمثل الرمز asterisk sign (*) الحقول المطلوبة (required fields).
 
