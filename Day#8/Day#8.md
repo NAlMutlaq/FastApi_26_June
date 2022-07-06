@@ -27,4 +27,4 @@
     }
  ```
  
-- And now go to the `/docs` for your API, in the example above it would be `https://qltnci.deta.dev``/docs`.
+- And now go to the `/docs` for your API, in the example above it would be `https://qltnci.deta.dev/docs`.
